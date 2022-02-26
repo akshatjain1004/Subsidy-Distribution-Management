@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import ERC20App from './ERC20/ERC20App';
-import { CssBaseline, Divider, Drawer, List, ListItemButton,
+import { CssBaseline, Divider, List, ListItemButton,
     ListItemText, Typography, AppBar, Toolbar, Box } from '@mui/material';
 
 const AppAuthenticated = () => {
@@ -14,46 +14,19 @@ const AppAuthenticated = () => {
         //ERC1155: "ERC-1155"
     }
     const allERCs = Object.values(ERC);
-    const drawerWidth = 240;
 
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
             <AppBar
                 position="fixed"
-                sx={{ width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px` }}>
+                sx={{ width: `100%`}}>
                 <Toolbar>
                     <Typography variant="h6" noWrap component="div">
-                        Ethereum ERCs demo
+                        SUbsidy Distribution Management
                     </Typography>
                 </Toolbar>
             </AppBar>
-            <Drawer
-                sx={{
-                    width: drawerWidth,
-                    flexShrink: 0,
-                    '& .MuiDrawer-paper': {
-                        width: drawerWidth,
-                        boxSizing: 'border-box'
-                    }
-                }}
-                variant="permanent"
-                anchor="left">
-                <Toolbar />
-                <Divider />
-                <List>
-                    {allERCs.map((erc, index) => {
-                        return (<ListItemButton
-                            key={index}
-                            selected={index === ERCIndex}
-                            onClick={() => setERCIndex(index)}
-                        >
-                            <ListItemText primary={erc} />
-                        </ListItemButton>
-                        );
-                    })}
-                </List>
-            </Drawer>
             <Box
                 component="main"
                 sx={{ flexGrow: 1, bgcolor: 'background.default', p:3 }}>
