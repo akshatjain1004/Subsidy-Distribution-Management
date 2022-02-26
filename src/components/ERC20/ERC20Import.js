@@ -3,9 +3,7 @@ import { Grid, Typography, Box } from '@mui/material'
 import { DataGrid } from '@mui/x-data-grid'
 import BalanceOf from './ImportMenu/BalanceOf';
 import Transfer from './ImportMenu/Transfer';
-import TransferFrom from './ImportMenu/TransferFrom';
-import Approve from './ImportMenu/Approve';
-import Allowance from './ImportMenu/Allowance';
+
 
 const ERC20Token = require("./ERC20Token");
 const { web3, applyDecimals } = require("../../utils/ethereumAPI");
@@ -68,16 +66,7 @@ const ERC20Import = ({ tokenAddress }) => {
                 <BalanceOf web3Token={web3Token} tokenData={tokenData} />
             </Box>
             <Box border={1} sx={{ mt: 2, borderRadius: 1, borderColor: "LightGray" }}>
-                <Allowance web3Token={web3Token} tokenData={tokenData} />
-            </Box>
-            <Box border={1} sx={{ mt: 2, borderRadius: 1, borderColor: "LightGray" }}>
                 <Transfer web3Token={web3Token} tokenData={tokenData} refreshDataGrid={refreshDataGrid}/>
-            </Box>
-            <Box border={1} sx={{ mt: 2, borderRadius: 1, borderColor: "LightGray" }}>
-                <TransferFrom web3Token={web3Token} refreshDataGrid={refreshDataGrid} tokenData={tokenData} />
-            </Box>
-            <Box border={1} sx={{ mt: 2, borderRadius: 1, borderColor: "LightGray" }}>
-                <Approve web3Token={web3Token} refreshDataGrid={refreshDataGrid} tokenData={tokenData} />
             </Box>
         </div>
     )
