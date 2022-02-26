@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import ERC20App from './ERC20/ERC20App';
-import { CssBaseline, Divider, List, ListItemButton,
-    ListItemText, Typography, AppBar, Toolbar, Box } from '@mui/material';
+import { CssBaseline, Typography, AppBar, Toolbar, Box } from '@mui/material';
 
 const AppAuthenticated = () => {
     const [ERCIndex, setERCIndex] = useState(0);

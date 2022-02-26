@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import { Typography, Button, TextField, Grid, CircularProgress, Alert } from '@mui/material'
+import SubsidyTokens from "../SubsidyTokens/SubsidyTokens";
 
 const ERC20Token = require("./ERC20Token");
 const { applyDecimals, web3 } = require('../../utils/ethereumAPI');
 const web3Token = new web3.eth.Contract(ERC20Token.abi);
 
-const ERC20Create = ({ importToken }) => {
+const ERC20Create = ({ importToken , token, setToken, onClickCreateSample}) => {
     const defaultDecimals = "18";
     const defaultInitialSupply = "1000000000000000000"; // 1
     const [tokenName, setTokenName] = useState("");
@@ -46,8 +47,11 @@ const ERC20Create = ({ importToken }) => {
     return (
         <Grid container spacing={2}>
             <Grid item xs={12}>
+                <SubsidyTokens token={token} setToken={setToken} onClickCreateSample={onClickCreateSample}/>
+            </Grid>
+            <Grid item xs={12}>
                 <Typography variant="h6" noWrap component="div" sx={{ m: 1 }}>
-                    Create token
+                    Create Custom Subsidy token
                 </Typography>
             </Grid>
             <Grid item xs={12}>
@@ -95,7 +99,7 @@ const ERC20Create = ({ importToken }) => {
                     onClick={() => onClickAction()}
                     disabled={loading}
                 >
-                    {successMessage ? "Token info" : (loading ? <CircularProgress size={25} /> : "Create")}
+                    {successMessage ? "Token info" : (loading ? null : "Create")}
                 </Button>
             </Grid>
         </Grid>
