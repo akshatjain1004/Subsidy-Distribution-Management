@@ -22,7 +22,7 @@ const AppAuthenticated = () => {
                 sx={{ width: `100%`}}>
                 <Toolbar>
                     <Typography variant="h6" noWrap component="div">
-                        SUbsidy Distribution Management
+                        Subsidy Distribution Management
                     </Typography>
                 </Toolbar>
             </AppBar>
