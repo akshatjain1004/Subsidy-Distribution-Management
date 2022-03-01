@@ -38,7 +38,7 @@ const Transfer = ({ web3Token, tokenData, refreshDataGrid }) => {
                     onClick={(e) => onClickTransfer()}
                     disabled={data.loading}
                 >
-                    {data.loading ? <CircularProgress size={25} /> : "transfer(address to, uint256 value)"}
+                    {data.loading ? null : "transfer(address to, uint256 value)"}
                 </Button>
             </Grid>
             <Grid item xs={12}>
